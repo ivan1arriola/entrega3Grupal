@@ -7,7 +7,7 @@
 
 -------
 
-##Pautas:
+## Pautas:
 En esta entrega grupal, vamos a trabajar con una API de terceros, más concretamente ¡La API de imágenes de la NASA! 
 
 Dispondrán de un sitio web (adjunto) al que deberán realizar las modificaciones necesarias para cumplir con los siguientes puntos:
