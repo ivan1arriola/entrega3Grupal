@@ -1,7 +1,7 @@
 const NASA_API = 'https://images-api.nasa.gov/search?q=';
 let data = [];
 
-const getJSONData = async(input) => {
+const getJSONData = async (input) => {
     const result = await fetch(NASA_API + input); //probar input de dos palabras
     if(result.ok){
         const response = await result.json();
@@ -32,9 +32,9 @@ const showResult = (result) => {
 document.addEventListener('DOMContentLoaded', ()=>{
     const btnBuscar = document.getElementById('btnBuscar')
 
-    btnBuscar.addEventListener('click' , ()=>{
+    btnBuscar.addEventListener('click' , async ()=>{
         const inputBuscar = document.getElementById('inputBuscar').value;
-        getJSONData(inputBuscar);
+        await getJSONData(inputBuscar);
         showResult(data);
 
 
