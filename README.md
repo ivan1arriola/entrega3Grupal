@@ -1,5 +1,5 @@
 # entrega3Grupal
-## Integrantes del grupo:
+## Integrantes del grupo 8:
 - Iván Arriola
 - Lucas Cardozo
 - Pablo dos Santos
