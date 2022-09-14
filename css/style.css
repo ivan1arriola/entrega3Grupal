@@ -35,16 +35,12 @@ main {
 
   .flex{
 display: flex;
-
+ overflow: hidden;
   }
 
-  .des{
-   word-wrap: break-word;
-   
-    height: 11em;
+  .des{    
     width: 60em;
   }
-.img-result .block{  
+.img-result .block{
   overflow: hidden;
-
 }
