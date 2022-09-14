@@ -3,7 +3,7 @@ let data = [];
 
 const getJSONData = async (input) => {
     const result = await fetch(NASA_API + input); //probar input de dos palabras
-    if(result.ok){
+    if (result.ok) {
         const response = await result.json();
         data = response.collection.items;
     } else {
@@ -16,11 +16,19 @@ const showResult = (result) => {
     result.forEach(item => {
         html += `
         <div class="result">
-          <h1>${item.data[0].title}</h1>
-          <img src=${item.links[0].href} alt="${item.data[0].description_508}" class="img-result">
-          <div>
-            <p>${item.data[0].description}</p>
-          </div>
+     
+        <div class="flex">
+        
+        <div class="img-result block">
+          <img src=${item.links[0].href} alt="${item.data[0].description_508}"  >
+        </div>
+        
+        <div class="block">
+            <h1>${item.data[0].title}</h1> 
+           <div class="des"><p>${item.data[0].description}</p></div>
+        </div>
+        </div> 
+        
         </div>
         `
     });
@@ -29,10 +37,10 @@ const showResult = (result) => {
 }
 
 
-document.addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', () => {
     const btnBuscar = document.getElementById('btnBuscar')
 
-    btnBuscar.addEventListener('click' , async ()=>{
+    btnBuscar.addEventListener('click', async () => {
         const inputBuscar = document.getElementById('inputBuscar').value;
         await getJSONData(inputBuscar);
         showResult(data);
@@ -42,7 +50,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 
     })
-    ;
+        ;
 
 
 
