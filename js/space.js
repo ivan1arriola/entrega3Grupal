@@ -1,8 +1,9 @@
 const NASA_API = 'https://images-api.nasa.gov/search?q=';
+const MEDIA_TYPE = '&media_type=image'; // Se agrego un parametro para pedir que solo devuelva imagenes (excluyendo videos de las respuestas)
 let data = [];
 
 const getJSONData = async (input) => {
-    const result = await fetch(NASA_API + input); //probar input de dos palabras
+    const result = await fetch(NASA_API + input + MEDIA_TYPE);
     if (result.ok) {
         const response = await result.json();
         data = response.collection.items;
@@ -12,15 +13,16 @@ const getJSONData = async (input) => {
 }
 
 const showResult = (result) => {
+    
     let html = "";
-    result.forEach(item => {
+    result.forEach((item, index) => {
         html += `
         <div class="result">
      
         <div class="flex">
         
         <div class="img-result block">
-          <img src=${item.links[0].href} alt="${item.data[0].description_508}"  >
+          <img src=${item.links[0].href} alt="${index}"  >
         </div>
         
         <div class="block">
